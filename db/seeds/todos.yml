@@ -1,0 +1,30 @@
+    - text: 'Купить молоко'
+      isComplete: false
+      project_id: 1
+    - text: 'Заменить масло в двигателе до 23 апреля'
+      isComplete: false
+      project_id: 1
+    - text: 'Отправить письмо бабушке'
+      isComplete: true
+      project_id: 1
+    - text: 'Заплатить за квартиру'
+      isComplete: false
+      project_id: 1
+    - text: 'Забрать обувь из ремонта'
+      isComplete: false
+      project_id: 1
+    - text: 'Позвонить заказчику'
+      isComplete: true
+      project_id: 2
+    - text: 'Отправить документы'
+      isComplete: true
+      project_id: 2
+    - text: 'Заполнить отчет'
+      isComplete: false
+      project_id: 2
+    - text: 'Позвонить другу'
+      isComplete: false
+      project_id: 3
+    - text: 'Подготовиться к поездке'
+      isComplete: false
+      project_id: 3
