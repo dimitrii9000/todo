@@ -4,8 +4,6 @@
   "version": "0.0.1",
   "description": "Todo List",
   "scripts": {
-    "start": "rails s"
-  },
-  "dependencies": {},
-  "devDependencies": {}
+    "start": "rails s "
+  }
 }
