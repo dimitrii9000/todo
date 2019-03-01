@@ -1,5 +1,12 @@
+
 {
-  "name": "td",
-  "private": true,
-  "dependencies": {}
+  "name": "package-name",
+  "version": "1.0.0",
+  "description": "package description",
+  "scripts": {
+    "start": "rails s",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {},
+  "devDependencies": {}
 }
