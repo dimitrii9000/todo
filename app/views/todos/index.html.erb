@@ -1,8 +1,9 @@
-<p id="notice"><%= notice %></p>
+<div id="nav">
+<p>Задачи</p>
+</div>
 
-<h1>Задачи</h1>
-
-
+<div id="tasks">
+<div id="fam">
 <h2>Семья</h2>
 <ul>
   <% @todos.each do |todo| %>
@@ -13,17 +14,20 @@
         <% end %>
   <% end %>
 </ul>
+</div>
 
+<div id="wor">
 <h2>Работа</h2>
 <ul>
-<% @todos.each do |todo| %>
+    <% @todos.each do |todo| %>
       <% if todo.project.id == 2 then %>
         <li> <%= todo.text %> <%= link_to 'Удалить', todo, method: :delete %></li>
       <% end %>
-<% end %>
-
+    <% end %>
 </ul>
+</div>
 
+<div id="oth">
 <h2>Прочее</h2>
 <ul>
 <% @todos.each do |todo| %>
@@ -32,11 +36,12 @@
       <% end %>
 <% end %>
 </ul>
-
+</div>
+</div>
 <h2>Новая задача</h2>
 
 <div class="reveal">
-<p>+</p>
+<h2>+</h2>
 </div>
 
 <div class="new_task">
