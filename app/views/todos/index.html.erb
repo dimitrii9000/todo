@@ -1,44 +1,53 @@
+<div class="container-fluid">
+
 <div id="nav">
 <p>Задачи</p>
 </div>
 
-<div id="tasks">
-<div id="fam">
-<h2>Семья</h2>
+<div class="row">
+<div class="col-xs-12 col-sm-6 col-md-4">
+<div class="tasks">
+
+<h6>Семья</h6><hr>
 <ul>
   <% @todos.each do |todo| %>
         <% if todo.project.id == 1 then %>
           <li> <%= todo.text %>
-            <%= link_to 'Удалить', todo, method: :delete %>
+
           </li>
         <% end %>
   <% end %>
 </ul>
 </div>
+</div>
 
-<div id="wor">
-<h2>Работа</h2>
+<div class="col-xs-12 col-sm-6 col-md-4">
+<div class="tasks">
+<h6>Работа</h6><hr>
 <ul>
     <% @todos.each do |todo| %>
       <% if todo.project.id == 2 then %>
-        <li> <%= todo.text %> <%= link_to 'Удалить', todo, method: :delete %></li>
+        <li> <%= todo.text %>
       <% end %>
     <% end %>
 </ul>
 </div>
+</div>
 
-<div id="oth">
-<h2>Прочее</h2>
+<div class="col-xs-12 col-sm-6 col-md-4">
+<div class="tasks">
+<h6>Прочее</h6><hr>
 <ul>
 <% @todos.each do |todo| %>
       <% if todo.project.id == 3 then %>
-        <li> <%= todo.text %> <%= link_to 'Удалить', todo, method: :delete %></li>
+        <li> <%= todo.text %>
       <% end %>
 <% end %>
 </ul>
 </div>
 </div>
-<h2>Новая задача</h2>
+</div>
+
 
 <div class="reveal">
 <h2>+</h2>
@@ -50,43 +59,4 @@
     <p>Отмена</p>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-<table>
-  <thead>
-    <tr>
-      <th>Text</th>
-      <th>Iscomplete</th>
-      <th>Project</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @todos.each do |todo| %>
-      <tr>
-        <td><%= todo.text %></td>
-        <td><%= todo.isComplete %></td>
-        <td><%= todo.project.id %></td>
-        <td><%= link_to 'Show', todo %></td>
-        <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
-        <td><%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Todo', new_todo_path %> -->
+</div>
