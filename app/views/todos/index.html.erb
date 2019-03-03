@@ -1,62 +1,62 @@
 <div class="container-fluid">
 
-<div id="nav">
-<p>Задачи</p>
-</div>
-
-<div class="row">
-<div class="col-xs-12 col-sm-6 col-md-4">
-<div class="tasks">
-
-<h6>Семья</h6><hr>
-<ul>
-  <% @todos.each do |todo| %>
-        <% if todo.project.id == 1 then %>
-          <li> <%= todo.text %>
-
-          </li>
-        <% end %>
-  <% end %>
-</ul>
-</div>
-</div>
-
-<div class="col-xs-12 col-sm-6 col-md-4">
-<div class="tasks">
-<h6>Работа</h6><hr>
-<ul>
-    <% @todos.each do |todo| %>
-      <% if todo.project.id == 2 then %>
-        <li> <%= todo.text %>
-      <% end %>
-    <% end %>
-</ul>
-</div>
-</div>
-
-<div class="col-xs-12 col-sm-6 col-md-4">
-<div class="tasks">
-<h6>Прочее</h6><hr>
-<ul>
-<% @todos.each do |todo| %>
-      <% if todo.project.id == 3 then %>
-        <li> <%= todo.text %>
-      <% end %>
-<% end %>
-</ul>
-</div>
-</div>
-</div>
-
-
-<div class="reveal">
-<h2>+</h2>
-</div>
-
-<div class="new_task">
-  <%= render 'form', todo: @todo %>
-  <div class="cancel">
-    <p>Отмена</p>
+  <div id="nav">
+    <h3>Задачи</h3>
+    <div class="reveal">
+    <h3>+</h3>
+    </div>
   </div>
-</div>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="tasks">
+
+      <h6>Семья</h6><hr>
+        <ul>
+          <% @todos.each do |todo| %>
+                <% if todo.project.id == 1 then %>
+                  <li> <%= todo.text %>
+                    <!-- <div class="delete">
+                      <%= link_to 'Удалить', todo, method: :delete %>
+                    </div> -->
+                  </li>
+                <% end %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
+  <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="tasks">
+    <h6>Работа</h6><hr>
+      <ul>
+          <% @todos.each do |todo| %>
+            <% if todo.project.id == 2 then %>
+              <li> <%= todo.text %></li>
+            <% end %>
+          <% end %>
+      </ul>
+    </div>
+  </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="tasks">
+      <h6>Прочее</h6><hr>
+        <ul>
+          <% @todos.each do |todo| %>
+                <% if todo.project.id == 3 then %>
+                  <li> <%= todo.text %></li>
+                <% end %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="new_task">
+    <%= render 'form', todo: @todo %>
+    <div class="cancel">
+      <p>Отмена</p>
+    </div>
+  </div>
 </div>
