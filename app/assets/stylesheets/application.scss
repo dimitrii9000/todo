@@ -10,6 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require select2
  */
  @import "bootstrap";
  @font-face {
@@ -32,6 +33,14 @@ src: url('OpenSans-Semibold.ttf') format('truetype');
 @media (min-width: 992px) {
 
 }
+#bg_layer {
+    position: absolute;
+    z-index: 15;
+    width: 150%;
+    height: 150%;
+    background: #000;
+    opacity: 0.5;
+}
 #nav {
   background-color: #3aafda;
   font-size: 150%;
@@ -52,6 +61,19 @@ src: url('OpenSans-Semibold.ttf') format('truetype');
 }
 body {
   background-color: #f8f8f8;
+
+}
+a:visited{
+  color: black !important;
+  text-decoration: none;
+}
+a:active {
+  color: black !important;
+  text-decoration: none;
+}
+a {
+  text-decoration: none !important;
+  color: black !important;
 }
 .container-fluid {
   padding: 0;
@@ -82,4 +104,33 @@ body {
 .tasks li {
   margin-top: 1em;
   margin-bottom: 1em;
+
+}
+.tasks li:hover {
+  text-decoration: line-through;
+
+}
+.new_task {
+  text-align: center;
+  -webkit-box-shadow: inset 0px -0.8px 5px 0.4px rgba(136,136,136,1);
+  -moz-box-shadow: inset 0px -0.8px 5px 0.4px rgba(136,136,136,1);
+  box-shadow: inset 0px -0.8px 5px 0.4px rgba(136,136,136,1);
+  position:absolute;
+  z-index: 20;
+  background: #FFF;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+.select2-selection, .select2-selection__rendered, .select2-selection__arrow {
+   height: 40px !important;
+   span {
+       line-height: 40px !important;
+       text-align: left;
+   }
+}
+.select2-selection {
+   border-radius: 0 !important;
 }

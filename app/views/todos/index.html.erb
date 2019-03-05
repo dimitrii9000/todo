@@ -1,3 +1,4 @@
+<div id="bg_layer"></div>
 <div class="container-fluid">
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <div id="nav">
@@ -15,10 +16,8 @@
         <ul>
           <% @todos.each do |todo| %>
                 <% if todo.project.id == 1 then %>
-                  <li> <%= todo.text %>
-                    <!-- <div class="delete">
-                      <%= link_to 'Удалить', todo, method: :delete %>
-                    </div> -->
+                  <li>
+                      <%= link_to todo.text, todo, method: :delete %>
                   </li>
                 <% end %>
           <% end %>
@@ -30,11 +29,13 @@
     <div class="tasks">
     <h6>Работа</h6><hr>
       <ul>
-          <% @todos.each do |todo| %>
-            <% if todo.project.id == 2 then %>
-              <li> <%= todo.text %></li>
-            <% end %>
-          <% end %>
+        <% @todos.each do |todo| %>
+              <% if todo.project.id == 2 then %>
+                <li>
+                    <%= link_to todo.text, todo, method: :delete %>
+                </li>
+              <% end %>
+        <% end %>
       </ul>
     </div>
   </div>
@@ -45,7 +46,9 @@
         <ul>
           <% @todos.each do |todo| %>
                 <% if todo.project.id == 3 then %>
-                  <li> <%= todo.text %></li>
+                  <li>
+                      <%= link_to todo.text, todo, method: :delete %>
+                  </li>
                 <% end %>
           <% end %>
         </ul>

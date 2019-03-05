@@ -14,17 +14,24 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require jquery3
+//= require select2
 //= require rails-ujs
 //= require activestorage
 //= require_tree .
 
 $(document).ready(function(){
-  $("div.new_task").hide();
+  $( "#project_id" ).select2({
+    theme: "bootstrap"
+  });
+  $('#project_id').select2({
+    minimumResultsForSearch: -1
+  });
+  $('div.new_task,#bg_layer').hide();
   $("div.reveal").click(function(){
-    $("div.new_task").show();
+    $('#bg_layer,div.new_task').show();
       });
   $("div.cancel").click(function(){
-    $("div.new_task").hide();
+    $("div.new_task,#bg_layer").hide();
   });
 });
 $(document).on("click", "#Submit", function(){
