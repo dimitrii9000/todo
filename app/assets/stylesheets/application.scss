@@ -13,6 +13,7 @@
  *= require select2
  */
  @import "bootstrap";
+ @import 'icheck/square/blue';
  @font-face {
 font-family: 'SourceSansPro';
 src: url('OpenSans-Light.ttf') format('truetype');
@@ -22,24 +23,34 @@ src: url('OpenSans-Semibold.ttf') format('truetype');
 
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) {
-
+  #bg_layer {
+    height: 180% !important;
+  }
 }
 
 // Medium devices (tablets, less than 992px)
 @media (max-width: 991.98px) {
-
+  #bg_layer {
+    height: 180% !important;
+  }
 }
 
 @media (min-width: 992px) {
 
 }
+.new_task,#bg_layer{
+     display:none;
+}
+li {
+   list-style-type: none;
+  }
 #bg_layer {
     position: absolute;
     z-index: 15;
-    width: 150%;
-    height: 150%;
+    width: 100%;
+    height: 100%;
     background: #000;
-    opacity: 0.5;
+    opacity: 0.8;
 }
 #nav {
   background-color: #3aafda;
@@ -57,6 +68,12 @@ src: url('OpenSans-Semibold.ttf') format('truetype');
 .reveal {
   position: absolute;
   right: 1.5%;
+
+}
+.help {
+  position: absolute;
+  left: 1.5%;
+  font-size: 70%
 
 }
 body {
@@ -101,16 +118,17 @@ a {
   margin-right: 5%;
   margin-left: 5%;
 }
+.tasks ul {
+  padding-left: 15px;
+}
 .tasks li {
   margin-top: 1em;
   margin-bottom: 1em;
-
 }
 .tasks li:hover {
   text-decoration: line-through;
-
 }
-.new_task {
+.new_task, #greeting {
   text-align: center;
   -webkit-box-shadow: inset 0px -0.8px 5px 0.4px rgba(136,136,136,1);
   -moz-box-shadow: inset 0px -0.8px 5px 0.4px rgba(136,136,136,1);
@@ -122,15 +140,92 @@ a {
   top: 50%;
   left: 50%;
   margin-right: -50%;
-  transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%);
+  min-width: 360px;
+  min-height: 200px;
 }
+.new_task div{
+  width: inherit;
+}
+#par {
+  font-size: 125%;
+  margin-top: 7px;
+  margin-bottom: 6px;
+}
+
 .select2-selection, .select2-selection__rendered, .select2-selection__arrow {
    height: 40px !important;
+   width: 300px !important
    span {
        line-height: 40px !important;
        text-align: left;
+        width: 300px !important
    }
+   width: 80px ;
 }
 .select2-selection {
    border-radius: 0 !important;
+   width: 300px;
+}
+#text{
+  width: 300px;
+  height: 40px;
+}
+#buttns div {
+   display: inline-block !important;
+}
+.btn-secondary,.btn-secondary:hover, .btn-primary, .btn-primary:hover {
+    border-radius: 0 !important;
+    border: 0;
+}
+.btn-secondary {
+  color: #fff;
+  background-color: #9f9f9f;
+
+}
+
+.btn-secondary:hover {
+  color: #fff;
+  background-color: #777777;
+}
+.btn-primary {
+  background-color: #3aafda;
+  color: #fff !important;
+}
+.btn{
+  min-width: 135px !important;
+}
+
+.btn-primary:hover {
+
+  background-color: #3397bb;
+  color: #fff !important;
+}
+.select2 {
+  min-width: 300px;
+}
+#project_id{
+  width: 300px !important;
+}
+#Submit a{
+  color: #fff !important;
+}
+#greeting {
+  width: 100px;
+  background-color: #f8f8f8;
+  height: 180px !important;
+  display:none;
+}
+#greeting h6{
+  background-color: #3aafda;
+  min-height: 30px;
+}
+#greeting h5{
+  margin-top: 20px;
+}
+#greeting p{
+  margin: 10px 15px auto 15px;
+}
+#select2-drop{
+    width: 400px !important;
 }

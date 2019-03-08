@@ -15,25 +15,57 @@
 //= require bootstrap-sprockets
 //= require jquery3
 //= require select2
+//= require 'icheck'
 //= require rails-ujs
 //= require activestorage
 //= require_tree .
-
 $(document).ready(function(){
+  $("#project_id").select2({
+    width: 'resolve'
+  });
+$('#project_id').select2({dropdownAutoWidth : true});
+    function icheck(){
+    if($(".icheck-me").length > 0){
+      $(".icheck-me").each(function(){
+        var $el = $(this);
+        var skin = ($el.attr('data-skin') !== undefined) ? "_" + $el.attr('data-skin') : "",
+        color = ($el.attr('data-color') !== undefined) ? "-" + $el.attr('data-color') : "";
+        var opt = {
+          checkboxClass: 'icheckbox' + skin + color,
+          radioClass: 'iradio' + skin + color,
+        }
+        $el.iCheck(opt);
+      });
+    }
+  }
+  $(function(){
+    icheck();
+  })
+
+  $("#cancel").click(function(){
+    $("div.new_task,#bg_layer").hide();
+  });
+  $("#greeting>h5").click(function(){
+    $("#greeting, #bg_layer").hide();
+  });
   $( "#project_id" ).select2({
     theme: "bootstrap"
   });
   $('#project_id').select2({
     minimumResultsForSearch: -1
   });
-  $('div.new_task,#bg_layer').hide();
+  $('div.new_task,#bg_layer, #greeting').hide();
   $("div.reveal").click(function(){
     $('#bg_layer,div.new_task').show();
-      });
-  $("div.cancel").click(function(){
-    $("div.new_task,#bg_layer").hide();
   });
+  $(".help").click(function(){
+    $('#bg_layer,#greeting').show();
+  });
+  $('input:checkbox').on('ifToggled', function(event){
+  $(this).closest( "#form2" ).submit();
+
+});
 });
 $(document).on("click", "#Submit", function(){
-   $("#form").submit();
+   $("#form1").submit();
 });

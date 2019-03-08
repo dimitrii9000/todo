@@ -1,13 +1,24 @@
-<%= form_with(model: todo, local: true, :html => {:id=>'form'}) do |form| %>
-
-<h3>
-<div class="Text">
-  <p><%= form.text_field :text, :placeholder => "Название задачи" %></p>
-</div>
-<div class="Dropdown">
-  <p><%= form.select :project_id, [['Семья','1'],['Работа','2'],['Прочее','3']] %> </p>
-</div>
-<div id="Submit">
-    <%= link_to 'OK', "#" %>
-<% end %>
-</div>
+<p id = "par" align=center>Новая задача</p>
+<%= form_with(model: todo, local: true, :html => {:id=>'form1'}) do |form1| %>
+  <div class="Text">
+    <p><%= form1.text_field :text, :placeholder => "Название задачи",required: true %></p>
+   </div>
+  <!--<%= form1.check_box :isComplete,{:hidden=>'True'} %>-->
+  <div class="Dropdown" >
+    <p><%= form1.select :project_id, [['Семья','1'],['Работа','2'],['Прочее','3']],required: true,:style=>"width: 300px" %> </p>
+  </div>
+  <div id="buttns">
+      <div class="row">
+          <div class="col-6">
+    <div id="Submit" align=left>
+      <button type="button" class="btn btn-primary"><%= link_to 'OK', "#" %></button>
+    <% end %>
+    </div>
+    </div>
+      <div class="col-6">
+      <div id="cancel" align=right>
+        <button type="button" class="btn btn-secondary">Отмена</button>
+      </div>
+      </div>
+  </div>
+  </div>
