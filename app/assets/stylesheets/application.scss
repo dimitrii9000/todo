@@ -12,9 +12,9 @@
  *
  *= require select2
  */
- @import "bootstrap";
- @import 'icheck/square/blue';
- @font-face {
+@import "bootstrap";
+@import 'icheck/square/blue';
+@font-face {
 font-family: 'SourceSansPro';
 src: url('OpenSans-Light.ttf') format('truetype');
 src: url('OpenSans-Regular.ttf') format('truetype');
@@ -36,14 +36,13 @@ src: url('OpenSans-Semibold.ttf') format('truetype');
 }
 
 @media (min-width: 992px) {
-
 }
 .new_task,#bg_layer{
      display:none;
 }
 li {
    list-style-type: none;
-  }
+}
 #bg_layer {
     position: absolute;
     z-index: 15;
@@ -68,17 +67,14 @@ li {
 .reveal {
   position: absolute;
   right: 1.5%;
-
 }
 .help {
   position: absolute;
   left: 1.5%;
   font-size: 70%
-
 }
 body {
   background-color: #f8f8f8;
-
 }
 a:visited{
   color: black !important;
@@ -91,7 +87,6 @@ a:active {
 a {
   text-decoration: none !important;
   color: black !important;
-
 }
 .container-fluid {
   padding: 0;
@@ -131,7 +126,7 @@ a {
 }
 .help:hover {
   opacity: 0.6;
-    cursor: pointer;
+  cursor: pointer;
 }
 .reveal:hover {
   opacity: 0.6;
@@ -161,7 +156,6 @@ a {
   margin-top: 7px;
   margin-bottom: 6px;
 }
-
 .select2-selection, .select2-selection__rendered, .select2-selection__arrow {
    height: 40px !important;
    width: 300px !important
@@ -192,7 +186,6 @@ a {
   background-color: #9f9f9f;
 
 }
-
 .btn-secondary:hover {
   color: #fff;
   background-color: #777777;
@@ -204,9 +197,7 @@ a {
 .btn{
   min-width: 135px !important;
 }
-
 .btn-primary:hover {
-
   background-color: #3397bb;
   color: #fff !important;
 }
@@ -230,16 +221,16 @@ a {
   min-height: 30px;
 }
 #greeting h5{
-  margin-top: 20px;
+  margin-top: 10px;
+  cursor: pointer;
 
 }
 #greeting p{
-  margin: 10px 15px auto 15px;
+  margin: 8px 15px auto 15px;
 }
 #select2-drop{
-    width: 400px !important;
+  width: 400px !important;
 }
 .completed {
-    text-decoration: line-through;
-
+  text-decoration: line-through;
 }
