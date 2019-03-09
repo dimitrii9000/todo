@@ -91,6 +91,7 @@ a:active {
 a {
   text-decoration: none !important;
   color: black !important;
+  
 }
 .container-fluid {
   padding: 0;
@@ -125,8 +126,9 @@ a {
   margin-top: 1em;
   margin-bottom: 1em;
 }
-.tasks li:hover {
-  text-decoration: line-through;
+.tasks a:hover {
+  opacity: 0.6;
+
 }
 .new_task, #greeting {
   text-align: center;
@@ -222,10 +224,15 @@ a {
 }
 #greeting h5{
   margin-top: 20px;
+
 }
 #greeting p{
   margin: 10px 15px auto 15px;
 }
 #select2-drop{
     width: 400px !important;
+}
+.completed {
+    text-decoration: line-through;
+
 }

@@ -19,15 +19,27 @@
         <ul>
           <% @todos.order(:id).each do |todo| %>
                 <% if todo.project.id == 1 then %>
-                  <li><p>
-                    <%= form_with(model: todo, local: true, :html => {:id=>'form2'}) do |form2| %>
-                      <%= form2.check_box :isComplete,{:class=>'icheck-me', :'data-skin'=>"square", :"data-color"=>"blue"} %>
-                      <%= link_to todo.text, todo, method: :delete, data: {confirm: "Вы действительно хотите удалить задачу?"} %>
-                      <% end %>
-                      </p>
-                  </li>
-                <% end %>
-          <% end %>
+                  <% if todo.isComplete == true then %>
+                    <li>
+                      <div class="completed">
+                        <%= form_with(model: todo, local: true, :html => {:id=>'form2'}) do |form2| %>
+                          <%= form2.check_box :isComplete,{:class=>'icheck-me', :'data-skin'=>"square", :"data-color"=>"blue"} %>
+                          <%= link_to todo.text, todo, method: :delete, data: {confirm: "Вы действительно хотите удалить задачу?"} %>
+                        <% end %>
+                      </div>
+                    </li>
+                  <% else %>
+                    <li>
+                      <div class="uncompleted">
+                        <%= form_with(model: todo, local: true, :html => {:id=>'form2'}) do |form2| %>
+                          <%= form2.check_box :isComplete,{:class=>'icheck-me', :'data-skin'=>"square", :"data-color"=>"blue"} %>
+                          <%= link_to todo.text, todo, method: :delete, data: {confirm: "Вы действительно хотите удалить задачу?"} %>
+                        <% end %>
+                      </div>
+                    </li>
+              <% end %>
+            <% end %>
+        <% end %>
         </ul>
       </div>
     </div>
@@ -38,16 +50,27 @@
     <ul>
       <% @todos.order(:id).each do |todo| %>
             <% if todo.project.id == 2 then %>
-              <li>
-                <div class="task">
-                <%= form_with(model: todo, local: true, :html => {:id=>'form2'}) do |form2| %>
-                  <%= form2.check_box :isComplete,{:class=>'icheck-me', :'data-skin'=>"square", :"data-color"=>"blue"} %>
-                  <%= link_to todo.text, todo, method: :delete, data: {confirm: "Вы действительно хотите удалить задачу?"} %>
-                  <% end %>
-                </div>
-              </li>
-            <% end %>
-      <% end %>
+              <% if todo.isComplete == true then %>
+                <li>
+                  <div class="completed">
+                    <%= form_with(model: todo, local: true, :html => {:id=>'form2'}) do |form2| %>
+                      <%= form2.check_box :isComplete,{:class=>'icheck-me', :'data-skin'=>"square", :"data-color"=>"blue"} %>
+                      <%= link_to todo.text, todo, method: :delete, data: {confirm: "Вы действительно хотите удалить задачу?"} %>
+                    <% end %>
+                  </div>
+                </li>
+              <% else %>
+                <li>
+                  <div class="uncompleted">
+                    <%= form_with(model: todo, local: true, :html => {:id=>'form2'}) do |form2| %>
+                      <%= form2.check_box :isComplete,{:class=>'icheck-me', :'data-skin'=>"square", :"data-color"=>"blue"} %>
+                      <%= link_to todo.text, todo, method: :delete, data: {confirm: "Вы действительно хотите удалить задачу?"} %>
+                    <% end %>
+                  </div>
+                </li>
+          <% end %>
+        <% end %>
+    <% end %>
     </ul>
     </div>
   </div>
@@ -58,15 +81,27 @@
       <ul>
         <% @todos.order(:id).each do |todo| %>
               <% if todo.project.id == 3 then %>
-                <li><p>
-                  <%= form_with(model: todo, local: true, :html => {:id=>'form2'}) do |form2| %>
-                    <%= form2.check_box :isComplete,{:class=>'icheck-me', :'data-skin'=>"square", :"data-color"=>"blue"} %>
-                    <%= link_to todo.text, todo, method: :delete, data: {confirm: "Вы действительно хотите удалить задачу?"} %>
-                    <% end %>
-                    </p>
-                </li>
-              <% end %>
-        <% end %>
+                <% if todo.isComplete == true then %>
+                  <li>
+                    <div class="completed">
+                      <%= form_with(model: todo, local: true, :html => {:id=>'form2'}) do |form2| %>
+                        <%= form2.check_box :isComplete,{:class=>'icheck-me', :'data-skin'=>"square", :"data-color"=>"blue"} %>
+                        <%= link_to todo.text, todo, method: :delete, data: {confirm: "Вы действительно хотите удалить задачу?"} %>
+                      <% end %>
+                    </div>
+                  </li>
+                <% else %>
+                  <li>
+                    <div class="uncompleted">
+                      <%= form_with(model: todo, local: true, :html => {:id=>'form2'}) do |form2| %>
+                        <%= form2.check_box :isComplete,{:class=>'icheck-me', :'data-skin'=>"square", :"data-color"=>"blue"} %>
+                        <%= link_to todo.text, todo, method: :delete, data: {confirm: "Вы действительно хотите удалить задачу?"} %>
+                      <% end %>
+                    </div>
+                  </li>
+            <% end %>
+          <% end %>
+      <% end %>
       </ul>
       </div>
     </div>
@@ -78,7 +113,9 @@
 </div>
 
 <div id="greeting">
-  <h6 text-align: left>Добро пожаловать на TODO-Сайт</h6>
-  <p text-align: left>Управление: Нажатие на ЧекБокс - выполнить задачу; Нажатие на саму задачу - ее удаление; Плюс справа - Добавить новую задачу</p>
+  <h6 text-align: left> Добро пожаловать на TODO-Сайт</h6>
+  <p text-align:justify > Управление:<br>Нажатие на ЧекБокс - выполнить таск;<br>
+     Нажатие на саму задачу - ее удаление;<br>
+     Плюс справа - Добавить новую задачу</p>
   <h5 >Нажми сюда, чтобы войти!</h5>
 </div>
